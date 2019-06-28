@@ -1,0 +1,908 @@
+{
+	"info": {
+		"_postman_id": "a8b9fb07-15c3-4118-9e5b-00d5b027e922",
+		"name": "QA POSTMAN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TRELLO",
+			"item": [
+				{
+					"name": "GET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/boards/{{boardId}}?name=novi test board aida&key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"boards",
+								"{{boardId}}"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "novi test board aida"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST board",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8143aef4-4b9f-4b37-b57e-a9054816a734",
+								"exec": [
+									"//GET ID VALUE AND SAVE IN GLOBAL ENV VAR boardId",
+									"",
+									"var jsonData = pm.response.json();",
+									"",
+									"var id = jsonData.id;",
+									"",
+									"pm.globals.set(\"boardId\", id);",
+									"",
+									"",
+									"pm.environment.set(\"envBoardId\", id);",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/boards/?name=Novi Test Board&token={{token}}&key={{key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"boards",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Novi Test Board"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								}
+							]
+						},
+						"description": "Kreiranje board-a"
+					},
+					"response": []
+				},
+				{
+					"name": "put",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/boards/{{boardId}}?name=Sanelin novi board&desc=Ovo je moj description&key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"boards",
+								"{{boardId}}"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Sanelin novi board"
+								},
+								{
+									"key": "desc",
+									"value": "Ovo je moj description"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/boards/{{boardId}}?name=Sanelin novi board&desc=Ovo je moj description&key=78e9639d5589944ce8fcb6d5ebd37abc&token=bdf1da54cd5cd6967161b23d5bfbe1e4e070db4d5b0329e4832adc0b3056a9bd",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"boards",
+								"{{boardId}}"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Sanelin novi board"
+								},
+								{
+									"key": "desc",
+									"value": "Ovo je moj description"
+								},
+								{
+									"key": "key",
+									"value": "78e9639d5589944ce8fcb6d5ebd37abc"
+								},
+								{
+									"key": "token",
+									"value": "bdf1da54cd5cd6967161b23d5bfbe1e4e070db4d5b0329e4832adc0b3056a9bd"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TRELLO BY ME LISTS",
+			"item": [
+				{
+					"name": "POST lists aida",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "50fb1a6f-5677-499c-b4f8-a99c2e522963",
+								"exec": [
+									"",
+									"    var jsonData = pm.response.json();",
+									"",
+									"",
+									"pm.globals.set(\"listId\", jsonData.id );"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/lists?name=aidas post test&key={{key}}&token={{token}}&idBoard={{envBoardId}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"lists"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "aidas post test"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "idBoard",
+									"value": "{{envBoardId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET listis aida",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/boards/5d14d292befb0162cf4ab827/lists?name=moj test board&key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"boards",
+								"5d14d292befb0162cf4ab827",
+								"lists"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "moj test board"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put list aida",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/lists/{{listId}}/?key={{key}}&token={{token}}&name=PUT aida lists",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"lists",
+								"{{listId}}",
+								""
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "name",
+									"value": "PUT aida lists"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get list aida",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/lists/{{listId}}/?key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"lists",
+								"{{listId}}",
+								""
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GET JSON",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0966a9b1-5f74-497a-be10-edd0f6b139b6",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {",
+							"    console.log(response.json());",
+							"});",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"Created\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/todos",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET XML",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0830a135-6269-42f6-86c3-af6eae8a1de2",
+						"exec": [
+							"pm.environment.get(\"variable_key\");",
+							"pm.globals.get(\"variable_key\");",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+							"});",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"Created\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.klix.ba/rss/vijesti/svijet",
+					"protocol": "https",
+					"host": [
+						"www",
+						"klix",
+						"ba"
+					],
+					"path": [
+						"rss",
+						"vijesti",
+						"svijet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET IMAGE",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4c3d0133-9350-4278-8e81-a8758916c767",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+							"});",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"Created\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/manicure-royalty-free-image-1001397648-1557521013.jpg?crop=1.00xw:0.750xh;0,0.132xh&resize=980:*",
+					"protocol": "https",
+					"host": [
+						"hips",
+						"hearstapps",
+						"com"
+					],
+					"path": [
+						"hmg-prod.s3.amazonaws.com",
+						"images",
+						"manicure-royalty-free-image-1001397648-1557521013.jpg"
+					],
+					"query": [
+						{
+							"key": "crop",
+							"value": "1.00xw:0.750xh;0,0.132xh"
+						},
+						{
+							"key": "resize",
+							"value": "980:*"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://www.youtube.com/watch?v=Cg12lS-BQr0",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://www.youtube.com/watch?v=Cg12lS-BQr0",
+					"protocol": "https",
+					"host": [
+						"www",
+						"youtube",
+						"com"
+					],
+					"path": [
+						"watch"
+					],
+					"query": [
+						{
+							"key": "v",
+							"value": "Cg12lS-BQr0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://jsonplaceholder.typicode.com/todos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ece1b3bb-3f3a-49b3-b21c-4673cefe5a80",
+						"exec": [
+							"pm.test(\"Validate array of objects\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    var jedanObjekat = jsonData[3];",
+							"    ",
+							"    console.log(jsonData[3]);",
+							"    pm.expect(jedanObjekat.title).to.eql(\"et porro tempora\");",
+							"});",
+							"",
+							"pm.test(\"Validate object\", function () {",
+							"  var jsonData = pm.response.json();",
+							"  var jedanObjekat = jsonData[3];",
+							"",
+							"  console.log(jsonData[3]);",
+							"  pm.expect(jedanObjekat.id).to.eql(4);",
+							"",
+							"",
+							"for (var i = 0; i < 5; i++) {",
+							"  var user = jsonData[i];",
+							"  console.log(user);",
+							"",
+							"",
+							"  }",
+							"  ",
+							"  });",
+							"  ",
+							"  ",
+							"  pm.test(\"Validat array of objects \", function () {",
+							"    // UZELI SMO RESPONSE = ARRAY",
+							"    var jsonData = pm.response.json();",
+							"    // IZDVOJILI JEDAN OBJEKAT ID = 3 (TO JE 4 OBJEKAT JER KRECMEO OD 0)",
+							"    var jedanObjekat = jsonData[3];",
+							"    //VALIDIRALI DA LI JE TITLE 3 OBJEKTA TACAN",
+							"    pm.expect(jedanObjekat.title).to.eql(\"et porro tempora\");",
+							"    ",
+							"    ",
+							"    //FOR LOOP ZA PROLAZAK KROS SVE OBJEKTE IZ RESPONSA I ISPIS TITLE",
+							"    for (var i = 0; i < jsonData.length; i++) {",
+							"        var userTitle = jsonData[i].title;",
+							"        console.log(userTitle);",
+							"        ",
+							"        if (userTitle == \"et porro tempora\") {",
+							" console.log(jsonData[i]);",
+							" console.log(\"Nasli smo tog usera\");",
+							"}",
+							"    }",
+							"",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/todos",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET HTML",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2fe3521b-89b2-46c8-a2d6-8e7ce0b96839",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"pm.test(\"Check value of heade X-Frame-Options\", function () {",
+							"   pm.response.to.have.header(\"X-Frame-Options\");",
+							"   pm.response.to.be.header(\"X-Frame-Options\", \"SAMEORIGIN\");",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"prati me\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.google.com/",
+					"protocol": "https",
+					"host": [
+						"www",
+						"google",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET JSON test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cbb8b684-5930-4e37-8a21-068d8257b947",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"*/*\");",
+							"});",
+							"",
+							"pm.test(\"Json\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    console.log(jsonData.headers.Accept);",
+							"    var accept = jsonData.headers.Accept;",
+							"    pm.expect(accept).to.eql(\"*/*\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://httpbin.or",
+					"protocol": "http",
+					"host": [
+						"httpbin",
+						"or"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET jason - test chuck n.",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3578918-be02-43bb-88fe-8861099ff931",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 100ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(100);",
+							"});",
+							"",
+							"pm.test(\"Connection\", function () {",
+							"    pm.response.to.have.header(\"Connection\");",
+							"});",
+							"",
+							"pm.test(\"Connection\", function () {",
+							"    pm.response.to.be.header(\"Connection\", \"keep-alive\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Connection\", function () {",
+							"    var mojResponse = pm.response.json();",
+							"    console.log(mojResponse);",
+							"    pm.expect(mojResponse.icon_url).to.eql(\"https://assets.chucknorris.host/img/avatar/chuck-norris.png\");",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.chucknorris.io/jokes/random",
+					"protocol": "https",
+					"host": [
+						"api",
+						"chucknorris",
+						"io"
+					],
+					"path": [
+						"jokes",
+						"random"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MAIL AUTH",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "5aa9ac8f2e975ad18595a04e1b798e50-us3",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "aidatab84",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://us3.api.mailchimp.com/3.0/",
+					"protocol": "https",
+					"host": [
+						"us3",
+						"api",
+						"mailchimp",
+						"com"
+					],
+					"path": [
+						"3.0",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api.openweathermap.org/data/2.5/weather?q=London,uk&appid=019e3f4301bface9f04f09992755a996",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/weather?q=London,uk&appid=019e3f4301bface9f04f09992755a996",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "London,uk"
+						},
+						{
+							"key": "appid",
+							"value": "019e3f4301bface9f04f09992755a996"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MAIL MEMBERS LIST",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "5aa9ac8f2e975ad18595a04e1b798e50-us3",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "aidatab84",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\": \"subscribed\",\n    \"email_address\": \"sanela.kalauzovic@klika.ba\"\n}"
+				},
+				"url": {
+					"raw": "https://us3.api.mailchimp.com/3.0/lists/f2a2a134d3/members?",
+					"protocol": "https",
+					"host": [
+						"us3",
+						"api",
+						"mailchimp",
+						"com"
+					],
+					"path": [
+						"3.0",
+						"lists",
+						"f2a2a134d3",
+						"members"
+					],
+					"query": [
+						{
+							"key": "list_id/members",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://us3.api.mailchimp.com/3.0/lists",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "5aa9ac8f2e975ad18595a04e1b798e50-us3",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "aidatab84",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://us3.api.mailchimp.com/3.0/lists",
+					"protocol": "https",
+					"host": [
+						"us3",
+						"api",
+						"mailchimp",
+						"com"
+					],
+					"path": [
+						"3.0",
+						"lists"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

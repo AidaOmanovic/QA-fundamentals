@@ -1,0 +1,27 @@
+with input as
+    (select seg.id seg_id,
+            seg.sec_scope_id seg_scope_id
+     from fam_segments seg
+     where seg.id = &segment_id),
+     assigned_up_ids AS
+    (select sit.resource_id id
+     FROM   fam_segment_items sit
+     WHERE  sit.segment_id = &segment_id)
+select usp.id,
+       usp.ucode,
+       usp.ext_ucode,
+       usp.name      name,
+       usp.SERIAL    serial,
+       spc.TYPE_ID   kind_id
+from mdm_resources usp
+       join mdm_resource_specs spc
+         on usp.res_spec_id = spc.id
+              and spc.type_id = 4
+       join input inp
+         on 1 = 1
+where usp.sec_scope_id in (select id
+                           from sec_scopes
+                           connect by prior id = parent_id
+                           start with id = inp.seg_scope_id)
+      and usp.id not in (select id from assigned_up_ids)
+      and usp.id not in (select si.resource_id from fam_segment_items si)

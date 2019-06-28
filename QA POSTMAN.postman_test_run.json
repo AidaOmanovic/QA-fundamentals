@@ -1,0 +1,308 @@
+{
+	"id": "1a6c8159-bdf5-4950-8122-40f946f6b852",
+	"name": "QA POSTMAN",
+	"allTests": [],
+	"timestamp": "2019-06-26T09:10:17.061Z",
+	"collection_id": "a8b9fb07-15c3-4118-9e5b-00d5b027e922",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "0",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "a8b9fb07-15c3-4118-9e5b-00d5b027e922",
+		"name": "QA POSTMAN",
+		"description": null,
+		"auth": null,
+		"events": null,
+		"variables": null,
+		"order": [
+			"68a46dba-45f5-4b63-a0e4-c87f3f54054d",
+			"f690af40-967f-4134-ac24-57613d703602",
+			"97b01cfa-a8a8-4a87-9840-13c4de588504",
+			"0f5ab89a-19b6-4df5-8621-0baf95eaa022"
+		],
+		"folders_order": [],
+		"owner": "3550193",
+		"favorite": false
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [],
+	"results": [
+		{
+			"name": "GET JSON",
+			"id": "68a46dba-45f5-4b63-a0e4-c87f3f54054d",
+			"url": "https://jsonplaceholder.typicode.com/todos",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Status code name has string": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code name has string": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				"46"
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Status code name has string": false
+				}
+			],
+			"time": "46",
+			"totalRequestTime": "46",
+			"iterationResults": {}
+		},
+		{
+			"name": "GET XML",
+			"id": "f690af40-967f-4134-ac24-57613d703602",
+			"url": "https://www.klix.ba/rss/vijesti/svijet",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Successful POST request": false,
+				"Status code name has string": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Successful POST request": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Status code name has string": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				"151"
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Successful POST request": false,
+					"Status code name has string": false
+				}
+			],
+			"time": "151",
+			"totalRequestTime": "151",
+			"iterationResults": {}
+		},
+		{
+			"name": "GET IMAGE",
+			"id": "97b01cfa-a8a8-4a87-9840-13c4de588504",
+			"url": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/manicure-royalty-free-image-1001397648-1557521013.jpg?crop=1.00xw:0.750xh;0,0.132xh&resize=980:*",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Successful POST request": false,
+				"Status code name has string": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Successful POST request": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Status code name has string": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				"68"
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Successful POST request": false,
+					"Status code name has string": false
+				}
+			],
+			"time": "68",
+			"totalRequestTime": "68",
+			"iterationResults": {}
+		},
+		{
+			"name": "GET HTML",
+			"id": "0f5ab89a-19b6-4df5-8621-0baf95eaa022",
+			"url": "https://www.google.com/",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"225"
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			],
+			"time": "225",
+			"totalRequestTime": "225",
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 4,
+	"totalFail": 5,
+	"totalTime": 490,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "GET JSON",
+			"id": "68a46dba-45f5-4b63-a0e4-c87f3f54054d",
+			"url": "https://jsonplaceholder.typicode.com/todos",
+			"time": "2019-06-26T09:10:17.061Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code name has string": {
+					"pass": 0,
+					"fail": 1
+				}
+			}
+		},
+		{
+			"name": "GET XML",
+			"id": "f690af40-967f-4134-ac24-57613d703602",
+			"url": "https://www.klix.ba/rss/vijesti/svijet",
+			"time": "2019-06-26T09:10:17.061Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Successful POST request": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Status code name has string": {
+					"pass": 0,
+					"fail": 1
+				}
+			}
+		},
+		{
+			"name": "GET IMAGE",
+			"id": "97b01cfa-a8a8-4a87-9840-13c4de588504",
+			"url": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/manicure-royalty-free-image-1001397648-1557521013.jpg?crop=1.00xw:0.750xh;0,0.132xh&resize=980:*",
+			"time": "2019-06-26T09:10:17.061Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Successful POST request": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Status code name has string": {
+					"pass": 0,
+					"fail": 1
+				}
+			}
+		},
+		{
+			"name": "GET HTML",
+			"id": "0f5ab89a-19b6-4df5-8621-0baf95eaa022",
+			"url": "https://www.google.com/",
+			"time": "2019-06-26T09:10:17.061Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		}
+	],
+	"synced": false
+}
